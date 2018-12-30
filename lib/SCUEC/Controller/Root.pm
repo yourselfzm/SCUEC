@@ -72,7 +72,7 @@ sub auto : Private {
 
 =head1 AUTHOR
 
-lh,,,
+yourselfzm,,,
 
 =head1 LICENSE
 
