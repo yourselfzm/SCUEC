@@ -16,8 +16,8 @@ perldoc Catalyst::Manual::Tutorial
 您在遵循教程操作时安装[Task::Catalyst::Tutorial](https://metacpan.org/pod/Task::Catalyst::Tutorial)用以安装所需的依赖项目。您还可以参考[Catalyst::Manual::Tutorial::Intro](https://metacpan.org/pod/distribution/Catalyst-Manual/lib/Catalyst/Manual/Tutorial/01_Intro.pod)获取有关安装选项的更多信息。  
 一些“入门”链接：  
 
-* [Catalyst::Manual::About](https://metacpan.org/pod/distribution/Catalyst-Manual/lib/Catalyst/Manual/About.pod)
-* [Catalyst::Manual::Intro](https://metacpan.org/pod/distribution/Catalyst-Manual/lib/Catalyst/Manual/Intro.pod)
+* [Catalyst::Manual::About](About.md)
+* [Catalyst::Manual::Intro](Intro.md)
 * [Catalyst::Manual::Tutorial](https://metacpan.org/pod/distribution/Catalyst-Manual/lib/Catalyst/Manual/Tutorial.pod)
 * [Catalyst::Manual::Actions](https://metacpan.org/pod/distribution/Catalyst-Manual/lib/Catalyst/Manual/Actions.pod)
 * [Catalyst::Manual::Cookbook](https://metacpan.org/pod/distribution/Catalyst-Manual/lib/Catalyst/Manual/Cookbook.pod)

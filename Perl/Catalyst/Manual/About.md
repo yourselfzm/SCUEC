@@ -2,7 +2,7 @@
 Catalyst::Manual::About - Catalyst的理念
 
 # 描述
-本文档是对*为什么*使用Catalyst的基本介绍。它不教您如何编写Catalyst应用程序；有关介绍请参阅[Catalyst::Manual::Intro](https://metacpan.org/pod/distribution/Catalyst-Manual/lib/Catalyst/Manual/Intro.pod)。相反，它解释了Catalyst典型应用的基础知识，以及为什么使用Catalyst来构建应用程序。
+本文档是对*为什么*使用Catalyst的基本介绍。它不教您如何编写Catalyst应用程序；有关介绍请参阅[Catalyst::Manual::Intro](Intro.md)。相反，它解释了Catalyst典型应用的基础知识，以及为什么使用Catalyst来构建应用程序。
 
 ## 简短摘要（什么是Catalyst？)
 Catalyst是一个Web应用程序框架。这意味着您可以使用它来帮助构建在Web上运行的应用程序，或者使用用于Web的协议运行的应用程序。Catalyst旨在使您可以轻松管理在Web上运行应用程序所需执行的各种任务，也可自行执行，或者让您“插入”执行所需操作的现有Perl模块。您通常使用Web应用程序执行许多操作。例如：
@@ -129,4 +129,4 @@ View怎么样？我们的想法是，您的模板几乎完全与显示有关，�
 
 # 参见
 
-[Catalyst](https://metacpan.org/pod/Catalyst)，[Catalyst::Manual::Intro](https://metacpan.org/pod/distribution/Catalyst-Manual/lib/Catalyst/Manual/Intro.pod)
+[Catalyst](https://metacpan.org/pod/Catalyst)，[Catalyst::Manual::Intro](Intro.md)
