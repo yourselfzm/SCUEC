@@ -18,7 +18,7 @@ perldoc Catalyst::Manual::Tutorial
 
 * [Catalyst::Manual::About](About.md)
 * [Catalyst::Manual::Intro](Intro.md)
-* [Catalyst::Manual::Tutorial](https://metacpan.org/pod/distribution/Catalyst-Manual/lib/Catalyst/Manual/Tutorial.pod)
+* [Catalyst::Manual::Tutorial](/Tutorial/index.md)
 * [Catalyst::Manual::Actions](https://metacpan.org/pod/distribution/Catalyst-Manual/lib/Catalyst/Manual/Actions.pod)
 * [Catalyst::Manual::Cookbook](https://metacpan.org/pod/distribution/Catalyst-Manual/lib/Catalyst/Manual/Cookbook.pod)
 * [Catalyst::Manual::DevelopmentProcess](https://metacpan.org/pod/distribution/Catalyst-Manual/lib/Catalyst/Manual/DevelopmentProcess.pod)

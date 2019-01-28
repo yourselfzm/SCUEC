@@ -1085,7 +1085,7 @@ Catalyst有许多工具可用于应用程序的实际回归测试。帮助程序
 ## 参见
 
 - [Catalyst::Manual::About](About.md)
-- [Catalyst::Manual::Tutorial](https://metacpan.org/pod/distribution/Catalyst-Manual/lib/Catalyst/Manual/Tutorial.pod)
+- [Catalyst::Manual::Tutorial](Tutorial/index.md)
 - [Catalyst](https://metacpan.org/pod/Catalyst)
 
 ### 支持
