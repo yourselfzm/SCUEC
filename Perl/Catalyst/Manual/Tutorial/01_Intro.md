@@ -30,7 +30,7 @@ Catalyst::Manual::Tutorial::01_Intro - Catalyst Tutorial - 第1章：简介
 
 <http://cattut.shadowcat.co.uk/>
 
-有关获取和使用VM的说明，请参阅下面的[“从使用教程虚拟机开始”](#VM)。
+有关获取和使用VM的说明，请参阅下面的[“从使用教程虚拟机开始”](#cong-shi-yong-jiao-cheng-xu-ni-ji-kai-shi)。
 
 如果您希望直接下载代码，可以通过以下命令获取代码（注意：可能会很快切换到git）：
 
@@ -71,7 +71,7 @@ cpan Task::Catalyst::Tutorial
 
 此外，本教程还尝试最小化控制器，模型，TT模板和数据库表的数量。虽然这确实会导致事情有时变得有点人为，但这些概念应该适用于更复杂的环境。可以在<http://wiki.catalystframework.org/wiki/resources/catalystexamples>以及<http://dev.catalyst.perl.org/repos/Catalyst/trunk/examples/>上的Catalyst Subversion存储库`examples`区域找到更完整和复杂的示例应用程序。
 
-# <span id="VM">从使用教程虚拟机开始</span>
+# <span id="cong-shi-yong-jiao-cheng-xu-ni-ji-kai-shi">从使用教程虚拟机开始</span>
 
 以下步骤简要介绍了如何下载Tutorial Virtual Machine。本文档使用术语“主机”来指代您将运行虚拟化软件并启动VM的物理机。术语“客户机”或“虚拟机”指的是虚拟机本身 - 您实际执行教程的内容（以及您在“主机”上启动的内容）。
 
@@ -120,7 +120,7 @@ cpan Task::Catalyst::Tutorial
   
   **注：**上面的ping正从您的主机（主桌面）为源，到你的客户虚拟机，而不是其他方式。
   
-  如果您没有看到有效的IP地址或它没有响应ping（例如，您收到“请求超时”，“100％丢包”或“目标主机无法访问”）的错误消息，则可能与您可能需要解决的一些与网络相关的问题。有关其他信息和故障排除建议，请参阅下面的[“整理虚拟机网络相关问题”](#Network)部分。
+  如果您没有看到有效的IP地址或它没有响应ping（例如，您收到“请求超时”，“100％丢包”或“目标主机无法访问”）的错误消息，则可能与您可能需要解决的一些与网络相关的问题。有关其他信息和故障排除建议，请参阅下面的[“整理虚拟机网络相关问题”](#zheng-li-xu-ni-ji-wang-luo-xiang-guan-wen-ti)部分。
   
   **注：**请记住此IP地址......您将在整个教程中使用它。
 
@@ -196,7 +196,7 @@ cpan Task::Catalyst::Tutorial
 
 **注**：请提供有关本教程的虚拟机方法如何为您工作的反馈。如果您有任何建议或意见，可以通过本页底部的电子邮件地址或通过<https://rt.cpan.org/Public/Dist/Display.html?Name=Catalyst-Manual>上的RT ticket联系作者。
 
-## <span id="Network">整理虚拟机网络相关问题</span>
+## <span id="zheng-li-xu-ni-ji-wang-luo-xiang-guan-wen-ti">整理虚拟机网络相关问题</span>
 
 通常，使用虚拟机来完成本教程比在其他环境中尝试*更*容易，尤其是如果您不熟悉Catalyst（或Perl或CPAN或......）。但是，您可能会遇到一些与网络相关的问题。好消息是，有很多关于这个问题的信息可以通过互联网上的搜索引擎获得。这里有一些背景信息可以帮助您入门。
 
