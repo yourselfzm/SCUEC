@@ -4,7 +4,7 @@ Catalyst::Manual::Tutorial::01_Intro - Catalyst Tutorial - 第1章：简介
 
 # 概述
 
-这是Catalyst教程的第1章，共10页。
+这是Catalyst教程的第1章，共10章。
 
 ## [教程概述](README.md)
 
