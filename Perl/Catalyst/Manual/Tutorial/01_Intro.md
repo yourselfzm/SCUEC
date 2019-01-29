@@ -120,7 +120,7 @@ cpan Task::Catalyst::Tutorial
   
   **注：**上面的ping正从您的主机（主桌面）为源，到你的客户虚拟机，而不是其他方式。
   
-  如果您没有看到有效的IP地址或它没有响应ping（例如，您收到“请求超时”，“100％丢包”或“目标主机无法访问”）的错误消息，则可能与您可能需要解决的一些与网络相关的问题。有关其他信息和故障排除建议，请参阅下面的[“排除虚拟机网络相关问题”](#Network)部分。
+  如果您没有看到有效的IP地址或它没有响应ping（例如，您收到“请求超时”，“100％丢包”或“目标主机无法访问”）的错误消息，则可能与您可能需要解决的一些与网络相关的问题。有关其他信息和故障排除建议，请参阅下面的[“整理虚拟机网络相关问题”](#Network)部分。
   
   **注：**请记住此IP地址......您将在整个教程中使用它。
 
@@ -156,15 +156,118 @@ cpan Task::Catalyst::Tutorial
   ```
   
   通常，人们期望人们在他们的主桌面（使用上面的术语“主机”）启动Tutorial VM，然后使用该主桌面计算机进行SSH和Web浏览到“客户虚拟机VM”，通过它们进行教程。如果您希望安装X Windows（或任何其他软件包），只需使用Debian的`aptitude`（或`apt-get`）命令。
+  
+  例如，要安装使用Fluxbox（一个轻量级的WindowManager - 它非常适用于本教程，因为它大约是其他常见X Windows环境十分之一的大小），您可以：
+  
+  ```shell
+  $ sudo aptitude update
+  $ sudo aptitude install xorg fluxbox iceweasel
+  ```
+  
+  然后使用以下命令从**VM控制台**启动X Windows ：
+  
+  ```shell
+  $ startx
+  ```
+  
+  请注意，如果要从SSH会话启动Fluxbox，可以使用`sudo dpkg-reconfigure x11-common`并从菜单中选择“anybody”。否则，您需要在实际的“VM控制台”上启动它。
+  
+  如果您偏好Gnome桌面环境，则可以执行以下操作：
+  
+  ```shell
+  $ sudo aptitude update
+  $ sudo aptitude install gnome iceweasel
+  $
+  $ # You can reboot or start with 'startx', we will just reboot here
+  $ reboot
+  ```
+  
+  对于KDE，只需将上面的包名“`gnome`”替换为“`kde`”即可。
+  
+  ```shell
+  $ sudo aptitude install kde iceweasel
+  ```
+  
+  注意，`iceweasel`基本上用于在Debian盒子上安装Firefox。您可以在X Windows下使用`firefox`命令或`iceweasel`命令（或使用菜单）启动它。您可以在<http://wiki.debian.org/Iceweasel>上获取有关Iceweasel的更多信息。
+  
+  此外，如果要运行X Windows（或可能需要额外内存的其他工具），则可能需要为虚拟机添加更多内存。有关如何执行此操作的说明，请参阅虚拟化软件的文档（通常非常简单）。
 
+您可能会注意到Tutorial Virtual Machine使用[local::lib](https://metacpan.org/pod/local::lib)，因此Perl模块从`〜/perl5`（在本例中为`/home/catalyst/perl5`）运行，而不是“system Perl”的常用位置。我们建议您也考虑使用这个非常方便的模块。它可以在开发上极其简化在临时工作台和生产服务器上维护和测试不同组合或Perl模块的过程。（“relocatable Perl”功能也可用于从您的主目录[或您选择的任何其他目录]运行模块**和**Perl本身）。
 
+**注**：请提供有关本教程的虚拟机方法如何为您工作的反馈。如果您有任何建议或意见，可以通过本页底部的电子邮件地址或通过<https://rt.cpan.org/Public/Dist/Display.html?Name=Catalyst-Manual>上的RT ticket联系作者。
 
+## <span id="Network">整理虚拟机网络相关问题</span>
 
+通常，使用虚拟机来完成本教程比在其他环境中尝试*更*容易，尤其是如果您不熟悉Catalyst（或Perl或CPAN或......）。但是，您可能会遇到一些与网络相关的问题。好消息是，有很多关于这个问题的信息可以通过互联网上的搜索引擎获得。这里有一些背景信息可以帮助您入门。
 
+在上一节的第5步中，我们假设“Bridged Mode”配置和DHCP将起作用（它适用于大多数人）。如果DHCP无法运行或在您所在的位置不可用，则大多数虚拟机“host”环境允许您在“guest”和“host”机器之间选择几种不同类型的网络之一。
 
+```
+1) Bridged
+2) NAT
+3) Local host only
+```
 
+教程虚拟机默认为“Bridged” - 这应该会导致VM像网络上的另一台设备一样，将获得与主机不同的DHCP IP地址。这种方法的优点是，您可以轻松地SSH和Web浏览到guest虚拟机。通常，如果您希望能够启动VM，然后使用主机中的SSH客户端和Web浏览器连接到虚拟机，则这是最佳选择。
 
+在某些环境中，使用“NAT”（网络地址转换）模式可能会更好。使用此配置，guest VM与主机共享相同的IP地址。此方法的缺点是，如果您希望能够通过SSH或Web浏览到guest VM，则需要进行特殊配置。NAT选项应自动允许VM“出站连接”（例如，如果要通过Internet安装其他Debian软件包），但如果要获取来自其他计算机的“入站连接”，则需要进行特殊配置（包括“主机”）进入VM。某些虚拟机主机环境允许您配置“静态NAT”或“端口转发”以访问guest操作系统，其他人忽略此功能。
 
+注：如果您安装X Windows并在实际VM上本地执行整个教程，而不是从主机上使用SSH和Web浏览器，则NAT模式可以正常工作。
 
+“Local host only”模式允许guest VM和主机在网络中其他设备无法访问的“私有子网”上通话。只要您不需要从VM进入Internet（例如，安装其他Debian软件包），这就可以工作。
 
+有关配置上述选项的帮助，请参阅虚拟机主机环境中的文档。以下是一些可能有用的链接：
 
+- <http://vmfaq.com/entry/34/>
+- <http://www.vmware.com/support/pubs/player_pubs.html>
+- <http://www.virtualbox.org/manual/ch06.html>
+
+# 本教程中使用的版本和惯例
+
+本教程是使用以下资源构建的。请注意，您可能需要针对不同的环境和版本进行调整（请注意，版本号中的尾随零并不重要，可能会因某些查看技术而被删除;例如，Catalyst v5.80020可能显示为5.8002）：
+
+- Debian 6 (Squeeze)
+- Catalyst v5.90002
+- Catalyst::Devel v1.34
+- DBIx::Class v0.08195
+- Catalyst::Model::DBIC::Schema v0.54
+- Template Toolkit v2.22
+- HTML::FormFu -- v0.09004
+
+- **注**：您可以使用以下命令检查已安装的版本（请注意空格前的斜杠）：
+
+  ```shell
+  perl -M<_mod_name_>\ 999
+  ```
+
+  或者：
+
+  ```shell
+  perl -M<_mod_name_> -e 'print "$<_mod_name_>::VERSION\n"'
+  ```
+
+  例如：
+
+  ```shell
+  perl -MCatalyst::Devel\ 999
+  ```
+
+  或者：
+  
+  ```shell
+  perl -MCatalyst::Devel -e 'print "$Catalyst::Devel::VERSION\n";'
+  ```
+
+- 本教程将以`http://localhost:3000`格式显示URL，但如果您从Tutorial Virtual Machine外部运行Web浏览器，则需要将URL中的`localhost`替换为IP地址（同样，您可以从ifconfig命令中获取eth0 IP地址）。例如，如果您的VM的IP地址为192.168.0.12，则需要使用`http://192.168.0.12:3000`的URL。请注意，开发服务器默认为端口3000（您可以在命令行上使用“-p”选项进行更改）。
+
+  **请注意：**根据您使用的Web浏览器，您可能需要在各个点测试应用程序时点击Shift+Reload或Ctrl+Reload拉出一个新页面（请参阅<http://en.wikipedia.org/wiki/Wikipedia:Bypass_your_cache>以获得每个浏览器全面的选项列表信息）。
+  
+  此外，某些浏览器（**尤其是Internet Explorer**）可能需要使用开发服务器的`-k` **keepalive**选项。
+
+# 数据库
+
+本教程主要关注SQLite，因为它的安装和使用简单; 但是，将在附录中介绍支持MySQL和PostgreSQL所需的脚本修改。
+
+**注：**使用Catalyst和DBIC等工具的一个优点是应用程序变得更加独立于数据库。因此，您会注意到只有`.sql`用于在数据库系统之间初始化数据库的文件发生变化：大多数代码通常保持不变。
+
+您可以在此处跳转到本教程的下一章：[Catalyst Basics](02_CatalystBasics.md)
