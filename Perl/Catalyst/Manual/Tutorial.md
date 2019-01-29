@@ -9,7 +9,7 @@ Catalyst框架是一个灵活而全面的环境，用于快速构建高功能的
 
 本教程分为以下几个部分：
 
-1. [Introduction](Tutorial/01_Introduction.md)
+1. [Introduction](Tutorial/01_Intro.md)
 2. [Catalyst Basics](Tutorial/02_CatalystBasics.md)
 3. [More Catalyst Basics](Tutorial/03_MoreCatalystBasics.md)
 4. [Basic CRUD](Tutorial/04_BasicCRUD.md)
@@ -24,7 +24,7 @@ Catalyst框架是一个灵活而全面的环境，用于快速构建高功能的
 
 # 详细目录
 
-## [Chapter 1: Intro](Tutorial/01_Introduction.md)
+## [Chapter 1: Introduction](Tutorial/01_Intro.md)
 
 注意：单击上一行中的标题可跳转到实际章节。以下是本章的“目录”。
 
