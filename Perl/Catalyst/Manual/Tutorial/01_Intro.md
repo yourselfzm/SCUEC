@@ -19,7 +19,6 @@ Catalyst::Manual::Tutorial::01_Intro - Catalyst Tutorial - 第1章：简介
 9. [Advanced CRUD](09_AdvancedCRUD.md)
 10. [Appendices](10_Appendices.md)
 
-
 # 描述
 
 本教程提供了Catalyst Web Framework的多部分简介。它旨在提供其许多最常用功能的快速概述。重点是构建几乎所有Catalyst应用程序所需的实际最佳实践。

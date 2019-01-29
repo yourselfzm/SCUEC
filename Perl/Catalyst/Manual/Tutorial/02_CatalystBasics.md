@@ -19,7 +19,6 @@ Catalyst :: Manual :: Tutorial :: 02_CatalystBasics - Catalyst Tutorial - 第2�
 9. [Advanced CRUD](09_AdvancedCRUD.md)
 10. [Appendices](10_Appendices.md)
 
-
 # 描述
 
 在本教程的这一章中，我们将创建一个非常基本的Catalyst Web应用程序，演示了许多强大的功能，例如：
@@ -238,6 +237,124 @@ Attempting to restart the server
 
 ## Hello, World! 使用视图和模板
 
+在Catalyst世界中，“View”本身不是XHTML的页面或用于向浏览器呈现页面的模板。相反，它是确定视图类型的模块 - HTML，PDF，XML等。对于生成该视图内容的东西（例如Template Toolkit模板文件），实际模板位于“root”目录下。
+
+要创建TT视图，请运行：
+
+```shell
+$ script/hello_create.pl view HTML TT
+```
+
+这创建了`lib/Hello/View/HTML.pm`模块，它是`Catalyst::View::TT`的子类。
+
+- “view”关键字告诉创建脚本您正在创建视图。
+- 第一个参数“HTML”告诉脚本将View模块命名为“HTML.pm”，这是TT视图的常用名称。您可以将其命名为任何名称，例如“MyView.pm”。如果您有多个视图，请务必在Hello.pm中设置default_view（有关设置此内容的更多详细信息，请参阅[Catalyst::View::TT](https://metacpan.org/pod/Catalyst::View::TT)）。
+- 最终的“TT”告诉Catalyst 视图的类型，“TT”表示您要使用Template Toolkit视图。
+
+如果你看`lib/Hello/View/HTML.pm`，你会发现它只包含一个配置语句来将TT扩展名设置为“.tt”。
+
+现在HTML.pm“View”存在，Catalyst将自动发现它，并能够使用它从`Catalyst::View::TT`类继承的“process”方法显示视图模板。
+
+Template Toolkit是一个功能非常全面的模板工具，在<http://template-toolkit.org/>上有很好的文档，但由于这不是TT教程，我们将坚持只使用基本的TT（并探讨一些本教程后面章节中更常见的TT功能）。
+
+创建`root/hello.tt`模板文件（将其放在作为应用程序基础`Hello`目录下的`root`中）。这是一个简单的示例：
+
+```html
+<p>
+    This is a TT view template, called '[% template.name %]'.
+</p>
+```
+
+[％和％]是模板的TT部分的标记。在里面你可以访问Perl变量和类，并使用TT指令。在这种情况下，我们使用一个特殊的TT变量来定义模板文件的名称（`hello.tt`）。模板的其余部分是普通的HTML。
+
+在`lib/Hello/Controller/Root.pm`中将hello方法更改为以下内容：
+
+```perl
+sub hello :Global {
+    my ( $self, $c ) = @_;
+ 
+    $c->stash(template => 'hello.tt');
+}
+```
+
+这一次，不是执行`$c->response->body()`，而是在Catalyst“stash”中设置“template”哈希键的值，这是一个用于放置信息以与应用程序的其他部分共享的区域。“template”键确定在请求周期结束时将显示哪个模板。Catalyst控制器对所有方法都有一个默认的“结束”操作，导致第一个（或默认）视图被呈现（除非有一个`$c->response->body()`语句）。因此，您的模板将在方法结束时神奇地显示出来。
+
+保存文件后，开发服务器应该自动重启（同样，编写教程假设您使用的是“-r”选项 - 如果不是，请手动重新启动它），并再次在您的Web浏览器中输入`http://localhost:3000/hello`查看。您应该看到刚刚创建的模板。
+
+**提示：**如果您在“后台窗口”中使用“-r”运行服务器，请不要让该窗口完全隐藏...如果您的代码中存在语法错误，则调试服务器输出将包含错误信息。
+
+**注：**您可能会遇到上面“stash”语句的变体，如下所示：
+
+```perl
+$c->stash->{template} = 'hello.tt';
+```
+
+虽然这种风格仍然比较常见，但我们之前使用的方法变得越来越普遍，因为它允许您在一行中设置多个stash变量。例如：
+
+```perl
+$c->stash(template => 'hello.tt', foo => 'bar', 
+          another_thing => 1);
+```
+
+您还可以使用hashref设置多个stash值：
+
+```perl
+$c->stash({template => 'hello.tt', foo => 'bar', 
+          another_thing => 1});
+```
+
+任何这些格式都有效，但`$c->stash(name => value);`风格越来越受欢迎 - 您可能希望始终使用它（即使您只设置单个值）。
+
+## 创建一个简单的控制器和一个动作
+
+通过执行create script创建名为“Site”的控制器：
+
+```shell
+$ script/hello_create.pl controller Site
+```
+
+这将创建一个`lib/Hello/Controller/Site.pm`文件（和一个测试文件）。如果您在编辑器中打开Site.pm，您会发现没有太多东西可以去看。
+
+在`lib/Hello/Controller/Site.pm`，添加以下方法：
+
+```perl
+sub test :Local {
+    my ( $self, $c ) = @_;
+ 
+    $c->stash(username => 'John',
+              template => 'site/test.tt');
+}
+```
+
+注意`test`方法的“Local”属性。这将导致`test`操作（现在我们已将“操作类型”分配给它的方法，它显示为对Catalyst的“控制器操作”）在“控制器/方法”URL上执行，或者，在本例中为“site/test”。我们将在本教程的其余部分中看到有关控制器操作的其他信息，但如果您好奇，请查看[Catalyst::Manual::Intro中的“Actions”](../Intro.md#Actions)。
+
+实际上并不像我们这样设置模板值。默认情况下，TT将尝试呈现遵循命名模式“controller/method.tt”的模板，我们在此处遵循该模式。但是，在其他情况下，您需要指定模板（例如，如果您已“forward”到该方法，或者它不遵循默认命名约定）。
+
+我们还将变量“username”放入存储中，以便在模板中使用。
+
+在“root”目录中创建一个子目录“site”。
+
+```shell
+$ mkdir root/site
+```
+
+在该目录中创建一个名为的新模板文件，root/site/test.tt并包含如下行：
+
+```html
+<p>Hello, [% username %]!</p>
+```
+
+服务器自动重新启动后，请注意`/site/test`“已加载路径”操作中列出的服务器输出。在浏览器中转到http://localhost:3000/site/test，您应该看到显示的test.tt文件，包括您在控制器中设置的名称“John”。
+
+您可以在此处跳转到本教程的下一章：[More Catalyst Basics](03_MoreCatalystBasics.md)
+
+# 作者
+
+Gerda Shank，`gerda.shank@gmail.com` Kennedy Clark，`hkclark@gmail.com`
+
+如有任何错误或建议，请随时与作者联系，但报告问题的最佳方式是通过<https://rt.cpan.org/Public/Dist/Display.html?Name=Catalyst-Manual>上的CPAN RT Bug系统。
+
+版权所有2006-2011，Kennedy Clark，知识共享署名相同许可协议版本3.0（<http://creativecommons.org/licenses/by-sa/3.0/us/>）。
 
 
 
