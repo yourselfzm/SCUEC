@@ -9,22 +9,22 @@ Catalyst框架是一个灵活而全面的环境，用于快速构建高功能的
 
 本教程分为以下几个部分：
 
-1. [Introduction](01_Introduction.md)
-2. [Catalyst Basics](02_CatalystBasics.md)
-3. [More Catalyst Basics](03_MoreCatalystBasics.md)
-4. [Basic CRUD](04_BasicCRUD.md)
-5. [Authentication](05_Authentication.md)
-6. [Authorization](06_Authorization.md)
-7. [Debugging](07_Debugging.md)
-8. [Testing](08_Testing.md)
-9. [Advanced CRUD](09_AdvancedCRUD.md)
-10. [Appendices](10_Appendices.md)
+1. [Introduction](Tutorial/01_Introduction.md)
+2. [Catalyst Basics](Tutorial/02_CatalystBasics.md)
+3. [More Catalyst Basics](Tutorial/03_MoreCatalystBasics.md)
+4. [Basic CRUD](Tutorial/04_BasicCRUD.md)
+5. [Authentication](Tutorial/05_Authentication.md)
+6. [Authorization](Tutorial/06_Authorization.md)
+7. [Debugging](Tutorial/07_Debugging.md)
+8. [Testing](Tutorial/08_Testing.md)
+9. [Advanced CRUD](Tutorial/09_AdvancedCRUD.md)
+10. [Appendices](Tutorial/10_Appendices.md)
 
 有关教程每章的最终代码tarball，请访问<http://dev.catalyst.perl.org/repos/Catalyst/trunk/examples/Tutorial/>。
 
 # 详细目录
 
-## [Chapter 1: Intro](01_Introduction.md)
+## [Chapter 1: Intro](Tutorial/01_Introduction.md)
 
 注意：单击上一行中的标题可跳转到实际章节。以下是本章的“目录”。
 
@@ -33,7 +33,7 @@ Catalyst框架是一个灵活而全面的环境，用于快速构建高功能的
 * DATABASES
 * WHERE TO GET WORKING CODE
 
-## [Chapter 2: Catalyst Basics](02_CatalystBasics.md)
+## [Chapter 2: Catalyst Basics](Tutorial/02_CatalystBasics.md)
 
 注意：单击上一行中的标题可跳转到实际章节。以下是本章的“目录”。
 
@@ -45,7 +45,7 @@ Catalyst框架是一个灵活而全面的环境，用于快速构建高功能的
 
 * CREATE A SIMPLE CONTROLLER AND AN ACTION
 
-## [Chapter 3: More Catalyst Basics](03_MoreCatalystBasics.md)
+## [Chapter 3: More Catalyst Basics](Tutorial/03_MoreCatalystBasics.md)
 
 注意：单击上一行中的标题可跳转到实际章节。以下是本章的“目录”。
 
@@ -87,7 +87,7 @@ Catalyst框架是一个灵活而全面的环境，用于快速构建高功能的
   * Using The Default Template Name
   * Return To A Manually-Specified Template
 
-## [Chapter 4: Basic CRUD](04_BasicCRUD.md)
+## [Chapter 4: Basic CRUD](Tutorial/04_BasicCRUD.md)
 
 注意：单击上一行中的标题可跳转到实际章节。以下是本章的“目录”。
 
@@ -128,7 +128,7 @@ Catalyst框架是一个灵活而全面的环境，用于快速构建高功能的
   * Chaining ResultSets
   * Adding Methods to Result Classes
 
-## [Chapter 5: Authentication](05_Authentication.md)
+## [Chapter 5: Authentication](Tutorial/05_Authentication.md)
 
 注意：单击上一行中的标题可跳转到实际章节。以下是本章的“目录”。
 
@@ -157,7 +157,7 @@ Catalyst框架是一个灵活而全面的环境，用于快速构建高功能的
   * Try Out Flash
   * Switch To Flash-To-Stash
 
-## [Chapter 6: Authorization](06_Authorization.md)
+## [Chapter 6: Authorization](Tutorial/06_Authorization.md)
 
 注意：单击上一行中的标题可跳转到实际章节。以下是本章的“目录”。
 
@@ -171,7 +171,7 @@ Catalyst框架是一个灵活而全面的环境，用于快速构建高功能的
 
 * ENABLE MODEL-BASED AUTHORIZATION
 
-## [Chapter 7: Debugging](07_Debugging.md)
+## [Chapter 7: Debugging](Tutorial/07_Debugging.md)
 
 注意：单击上一行中的标题可跳转到实际章节。以下是本章的“目录”。
 
@@ -180,7 +180,7 @@ Catalyst框架是一个灵活而全面的环境，用于快速构建高功能的
 * DEBUGGING MODULES FROM CPAN
 * TT DEBUGGING
 
-## [Chapter 8: Testing](08_Testing.md)
+## [Chapter 8: Testing](Tutorial/08_Testing.md)
 
 注意：单击上一行中的标题可跳转到实际章节。以下是本章的“目录”。
 
@@ -189,13 +189,13 @@ Catalyst框架是一个灵活而全面的环境，用于快速构建高功能的
 * ADDING YOUR OWN TEST SCRIPT
 * SUPPORTING BOTH PRODUCTION AND TEST DATABASES
 
-## [Chapter 9: Advanced CRUD](09_AdvancedCRUD.md)
+## [Chapter 9: Advanced CRUD](Tutorial/09_AdvancedCRUD.md)
 
 注意：单击上一行中的标题可跳转到实际章节。以下是本章的“目录”。
 
 * ADVANCED CRUD OPTIONS
 
-## [Chapter 10: Appendices](10_Appendices.md)
+## [Chapter 10: Appendices](Tutorial/10_Appendices.md)
 
 注意：单击上一行中的标题可跳转到实际章节。以下是本章的“目录”。
 
