@@ -4,7 +4,7 @@ Catalyst::Manual::Intro - Catalyst简介
 
 # 描述
 
-这是Catalyst的简要介绍。它解释了Catalyst工作原理的最重要特性，并展示了如何让简单应用快速启动和运行。有关Catalyst本身的介绍（无代码）以及您应该使用它的原因，请参阅[Catalyst::Manual::About](About.md)。有关使用Catalyst编写应用程序的系统分步介绍，请参阅[Catalyst::Manual::Tutorial](Tutorial.md)。
+这是Catalyst的简要介绍。它解释了Catalyst工作原理的最重要特性，并展示了如何让简单应用快速启动和运行。有关Catalyst本身的介绍（无代码）以及您应该使用它的原因，请参阅[Catalyst::Manual::About](About.md)。有关使用Catalyst编写应用程序的系统分步介绍，请参阅[Catalyst::Manual::Tutorial](Tutorial/README.md)。
 
 ## 什么是Catalyst？
 
@@ -1085,7 +1085,7 @@ Catalyst有许多工具可用于应用程序的实际回归测试。帮助程序
 ## 参见
 
 - [Catalyst::Manual::About](About.md)
-- [Catalyst::Manual::Tutorial](Tutorial.md)
+- [Catalyst::Manual::Tutorial](Tutorial/README.md)
 - [Catalyst](https://metacpan.org/pod/Catalyst)
 
 ### 支持

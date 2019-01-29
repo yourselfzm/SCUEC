@@ -6,7 +6,7 @@ Catalyst::Manual::Tutorial::01_Intro - Catalyst Tutorial - 第1章：简介
 
 这是Catalyst教程的第1章，共10页。
 
-## [教程概述](../Tutorial.md)
+## [教程概述](README.md)
 
 1. Introduction
 2. [Catalyst Basics](02_CatalystBasics.md)
@@ -21,6 +21,8 @@ Catalyst::Manual::Tutorial::01_Intro - Catalyst Tutorial - 第1章：简介
 
 
 # 描述
+
+本教程提供了Catalyst Web Framework的多部分简介。它旨在提供其许多最常用功能的快速概述。重点是构建几乎所有Catalyst应用程序所需的实际最佳实践。
 
 
 
