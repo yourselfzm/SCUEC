@@ -6,3 +6,4 @@
   * [Tutorial](Perl/Catalyst/Manual/Tutorial/README.md)
     * [Ch01: Introduction](Perl/Catalyst/Manual/Tutorial/01_Intro.md)
     * [Ch02: Catalyst Basics](Perl/Catalyst/Manual/Tutorial/02_CatalystBasics.md)
+    * [Ch03: More Catalyst Basics](Perl/Catalyst/Manual/Tutorial/03_MoreCatalystBasics.md)
