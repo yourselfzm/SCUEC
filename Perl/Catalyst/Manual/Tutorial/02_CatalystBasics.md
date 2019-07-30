@@ -1,6 +1,6 @@
 # 名称
 
-Catalyst :: Manual :: Tutorial :: 02_CatalystBasics - Catalyst Tutorial - 第2章：Catalyst应用程序开发基础
+Catalyst::Manual::Tutorial::02_CatalystBasics - Catalyst Tutorial - 第2章：Catalyst应用程序开发基础
 
 # 概述
 
